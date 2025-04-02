@@ -15,7 +15,9 @@ Adjust the parameters to meet your students' unique needs.
 # Sidebar for API key and settings
 with st.sidebar:
     st.header("Configuration")
-    api_key = st.text_input("Enter your Gemini API key:", type="password")
+    api_key = st.secrets["gemini_api_key"]  # Best practice: store API keys securely
+    #genai.configure(api_key=API_KEY)
+    #api_key = st.text_input("Enter your Gemini API key:", type="password")
     st.markdown("[Get a Gemini API key](https://ai.google.dev/)")
     
     st.subheader("AI Settings")
